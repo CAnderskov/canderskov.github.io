@@ -105,6 +105,7 @@
 <li>
 <ul>
 <li><a href="#hugo-on-github-io-root">Hugo on Github.io root</a></li>
+<li><a href="#notes-gotchas">Notes / gotchas</a></li>
 </ul></li>
 </ul></li>
 </ul>
@@ -160,17 +161,39 @@
 This is when i started googling other results, i did find some, that did things similar to what i ended up doing was inspired heavily by the blog post here: <a href="http://charliegriefer.github.io/posts/2016/07/29/hugo-on-github-pages/">http://charliegriefer.github.io/posts/2016/07/29/hugo-on-github-pages/</a> but instead with a slight modification of me copying and overwriting files from my hugo repo instead of rm&rsquo;ing the folder posts folder, I was unsure how hugo handles files already being there when doing a build, and i figured that someday, down the line i might want to do things out of the posts directory.. which is why I modified the bash script to fit my needs. this was a quick and dirty kinda thing that i just wanted to get over with, All credit for the original script goes to @charliegriefer.github.io</p>
 </blockquote>
 
+<h3 id="notes-gotchas">Notes / gotchas</h3>
+
+<ul>
+<li>If I had rsync avalible in gitbash, i would have used it</li>
+<li>Since i remove all files everytime i do a deploy, all files will look like fresh files and get re-commited to the repo even tho theres nothing new in them, this is a minor detail to me, as the history of what happens in what files is being logged in my hugo soruce file repo anyway, still, its worth a mention.</li>
+</ul>
+
 <pre><code class="language-bash">#!/bin/bash
+SORUCEFOLDER=&quot;CAnderskov-hugo&quot;
+PUBLICFOLDER=&quot;canderskov.github.io&quot;
 
 echo -e &quot;\033[0;32mDeploying new page...\033[0m&quot;
 
 echo -e &quot;\033[0;32mGenerating new html...\033[0m&quot;
 hugo -t hugo-redlounge
 
+
+echo -e &quot;\033[0;32mChecking if directory exists..\033[0m&quot;
+if [ ! -d &quot;../$PUBLICFOLDER&quot; ]; then
+	PWD=pwd
+  	cd ..
+   echo -e &quot;\033[0;32mNo github.io repo folder found, pulling fresh version into $PWD...\033[0m&quot;
+   git clone git@github.com:CAnderskov/canderskov.github.io.git
+else
+	echo -e &quot;\033[0;32mDirectory found, cleaning folder for new build..\033[0m&quot;
+	cd ../$PUBLICFOLDER
+	rm -rf *
+fi
+
 echo -e &quot;\033[0;32mMoving new html to repo folder...\033[0m&quot;
-mv public ../canderkov.github.io
+cp -r ../$SORUCEFOLDER/public/* ../$PUBLICFOLDER
 echo -e &quot;\033[0;32mChanging to blog directory...\033[0m&quot;
-cd ../canderskov.github.io
+cd ../$PUBLICFOLDER
 
 echo -e &quot;\033[0;32mCommit and push the new build...\033[0m&quot;
 git add --a
@@ -178,9 +201,10 @@ git commit -am &quot;Site Build (`date`)&quot;
 git push -f origin master
 
 echo -e &quot;\033[0;32mChange back to hugo soruce...\033[0m&quot;
-cd ../CAnderskov-hugo
+cd ../$SORUCEFOLDER
 
 echo -e &quot;\033[0;32mDeploy complete.\033[0m&quot;
+
 
 </code></pre>
 
