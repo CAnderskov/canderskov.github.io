@@ -2,6 +2,11 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://canderskov.github.io/post/Running_Hugo_from_gitpages/</loc>
+    <lastmod>2017-01-31T18:19:49+01:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://canderskov.github.io/post/BashJQToInfluxLineProtocol/</loc>
     <lastmod>2017-01-30T09:34:12+01:00</lastmod>
   </url>
@@ -36,7 +41,7 @@
   
   <url>
     <loc>https://canderskov.github.io/</loc>
-    <lastmod>2017-01-30T09:34:12+01:00</lastmod>
+    <lastmod>2017-01-31T18:19:49+01:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -47,25 +52,61 @@
   
   <url>
     <loc>https://canderskov.github.io/tags/development/</loc>
-    <lastmod>2017-01-30T09:34:12+01:00</lastmod>
+    <lastmod>2017-01-31T18:19:49+01:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
     <loc>https://canderskov.github.io/categories/development/</loc>
-    <lastmod>2017-01-30T09:34:12+01:00</lastmod>
+    <lastmod>2017-01-31T18:19:49+01:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://canderskov.github.io/tags/git-bash/</loc>
+    <lastmod>2017-01-31T18:19:49+01:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://canderskov.github.io/categories/git-bash/</loc>
+    <lastmod>2017-01-31T18:19:49+01:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://canderskov.github.io/tags/github/</loc>
+    <lastmod>2017-01-31T18:19:49+01:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://canderskov.github.io/categories/github/</loc>
+    <lastmod>2017-01-31T18:19:49+01:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://canderskov.github.io/tags/gitpages/</loc>
+    <lastmod>2017-01-31T18:19:49+01:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://canderskov.github.io/categories/gitpages/</loc>
+    <lastmod>2017-01-31T18:19:49+01:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
     <loc>https://canderskov.github.io/tags/hugo/</loc>
-    <lastmod>2017-01-30T08:59:43+01:00</lastmod>
+    <lastmod>2017-01-31T18:19:49+01:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
     <loc>https://canderskov.github.io/categories/hugo/</loc>
-    <lastmod>2017-01-30T08:59:43+01:00</lastmod>
+    <lastmod>2017-01-31T18:19:49+01:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -107,7 +148,7 @@
   
   <url>
     <loc>https://canderskov.github.io/post/</loc>
-    <lastmod>2017-01-30T09:34:12+01:00</lastmod>
+    <lastmod>2017-01-31T18:19:49+01:00</lastmod>
     <priority>0</priority>
   </url>
   

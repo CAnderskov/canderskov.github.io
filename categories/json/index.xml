@@ -19,12 +19,46 @@
 &lt;h3 id=&#34;why&#34;&gt;Why&lt;/h3&gt;
 
 &lt;blockquote&gt;
-&lt;p&gt;&lt;a href=&#34;https://github.com/influxdata/telegraf&#34;&gt;Telegraf&lt;/a&gt; supports reading json and writing it to influxdb, however as of writing this, it only support grabbing numeric values, I need to grab text as well.&lt;/p&gt;
-
-&lt;p&gt;Im sure there are smarter easier ways of doing this, and id love to hear about em, for now, this is what i was able to come up with&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://github.com/influxdata/telegraf&#34;&gt;Telegraf&lt;/a&gt; supports reading json and writing it to influxdb, however as of writing this, it only support grabbing numeric values, I need to grab text as well.
+Im sure there are smarter easier ways of doing this, and id love to hear about em, for now, this is what i was able to come up with&lt;/p&gt;
 &lt;/blockquote&gt;
 
-&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;#!/bin/sh
+&lt;h5 id=&#34;a-snippet-of-the-json-the-following-bash-script-is-scraping-for-context&#34;&gt;A snippet of the json the following bash script is scraping for context:&lt;/h5&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-json&#34;&gt;
+{
+	ServerNames: [
+	{
+		Time: 1485883080000000000,
+		servername: &amp;quot;ServerName01&amp;quot;,
+		Count: 27
+	},
+	{
+		Time: 1485883080000000000,
+		servername: &amp;quot;ServerName02&amp;quot;,
+		Count: 1
+	}
+	]
+}
+
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-html&#34;&gt;&amp;lt;section id=&amp;quot;main&amp;quot;&amp;gt;
+  &amp;lt;div&amp;gt;
+    &amp;lt;h1 id=&amp;quot;title&amp;quot;&amp;gt;{{ .Title }}&amp;lt;/h1&amp;gt;
+    {{ range .Data.Pages }}
+      {{ .Render &amp;quot;summary&amp;quot;}}
+    {{ end }}
+  &amp;lt;/div&amp;gt;
+&amp;lt;/section&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;The bash script:&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;
+#!/bin/sh
 
 #JSON to influx line protocol reformatter, Since the built in json parser of telegraf have a bug handling arrays the simplets way to get arrays of datas into influx was to write this simple reformatter, from json to line.
 # By Christian Anderskov Petersen christian@anderskov.dk

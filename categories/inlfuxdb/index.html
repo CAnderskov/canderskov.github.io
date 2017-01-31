@@ -32,7 +32,7 @@
   
   
 
-  <link rel="stylesheet" href="https://canderskov.github.io/css/redlounge.css">
+  <link rel="stylesheet" href="https://canderskov.github.io//css/redlounge.css">
   <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css" rel="stylesheet">
   <link href='//fonts.googleapis.com/css?family=Raleway:400,200,100,700,300,500,600,800' rel='stylesheet' type='text/css'>
   <link href='//fonts.googleapis.com/css?family=Libre+Baskerville:400,700,400italic' rel='stylesheet' type='text/css'>
@@ -45,12 +45,9 @@
   <link href="https://canderskov.github.io/categories/inlfuxdb/index.xml" rel="alternate" type="application/rss+xml" title="CAnderskov - Notes To Self.." />
 
     
-  
-  <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.7/styles/tomorrow-night-bright.min.css">
-  
-  <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.7/highlight.min.js"></script>
-  <script>hljs.initHighlightingOnLoad();</script>
 
+<link rel="stylesheet" href="/css/prism.css">
+<script src="/js/prism.js"></script>
 
   
 
@@ -74,7 +71,7 @@
 
     <nav class="nav">
       <ul class="nav-list">
-        <li class="nav-item"><span class="nav-item-separator">//</span><a href="https://canderskov.github.io">Home</a></li>
+        <li class="nav-item"><span class="nav-item-separator">//</span><a href="https://canderskov.github.io/">Home</a></li>
         
           <li class="nav-item"><span class="nav-item-separator">//</span><a href="/about/aboutme/">About</a></li>
         
@@ -118,22 +115,21 @@
       					<div class="post-categories">
 				        
       					
-					        <a class="post-category post-category-development" href="https://canderskov.github.io/categories/development">Development</a>
+					        <a class="post-category post-category-development" href="https://canderskov.github.io//categories/development">Development</a>
       					
-					        <a class="post-category post-category-bash" href="https://canderskov.github.io/categories/bash">bash</a>
+					        <a class="post-category post-category-bash" href="https://canderskov.github.io//categories/bash">bash</a>
       					
-					        <a class="post-category post-category-json" href="https://canderskov.github.io/categories/json">json</a>
+					        <a class="post-category post-category-json" href="https://canderskov.github.io//categories/json">json</a>
       					
-					        <a class="post-category post-category-inlfuxdb" href="https://canderskov.github.io/categories/inlfuxdb">inlfuxdb</a>
+					        <a class="post-category post-category-inlfuxdb" href="https://canderskov.github.io//categories/inlfuxdb">inlfuxdb</a>
       					
       					</div>
       				
             </p>
             
               <article class="post-summary">
-            	Why  Telegraf supports reading json and writing it to influxdb, however as of writing this, it only support grabbing numeric values, I need to grab text as well.
-Im sure there are smarter easier ways of doing this, and id love to hear about em, for now, this is what i was able to come up with
- #!/bin/sh #JSON to influx line protocol reformatter, Since the built in json parser of telegraf have a bug handling arrays the simplets way to get arrays of datas into influx was to write this simple reformatter, from json to line.
+            	Why  Telegraf supports reading json and writing it to influxdb, however as of writing this, it only support grabbing numeric values, I need to grab text as well. Im sure there are smarter easier ways of doing this, and id love to hear about em, for now, this is what i was able to come up with
+ A snippet of the json the following bash script is scraping for context: { ServerNames: [ { Time: 1485883080000000000, servername: &quot;ServerName01&quot;, Count: 27 }, { Time: 1485883080000000000, servername: &quot;ServerName02&quot;, Count: 1 } ] }  &lt;section id=&quot;main&quot;&gt; &lt;div&gt; &lt;h1 id=&quot;title&quot;&gt;{{ .
               </article>
 			  <div class="read-more-link">
 				<a href="/post/BashJQToInfluxLineProtocol/"><span class="read-more-slashes">//</span>Read More...</a>

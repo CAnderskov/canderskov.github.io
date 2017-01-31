@@ -32,7 +32,7 @@
   
   
 
-  <link rel="stylesheet" href="https://canderskov.github.io/css/redlounge.css">
+  <link rel="stylesheet" href="https://canderskov.github.io//css/redlounge.css">
   <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css" rel="stylesheet">
   <link href='//fonts.googleapis.com/css?family=Raleway:400,200,100,700,300,500,600,800' rel='stylesheet' type='text/css'>
   <link href='//fonts.googleapis.com/css?family=Libre+Baskerville:400,700,400italic' rel='stylesheet' type='text/css'>
@@ -45,12 +45,9 @@
   <link href="" rel="alternate" type="application/rss+xml" title="CAnderskov - Notes To Self.." />
 
     
-  
-  <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.7/styles/tomorrow-night-bright.min.css">
-  
-  <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.7/highlight.min.js"></script>
-  <script>hljs.initHighlightingOnLoad();</script>
 
+<link rel="stylesheet" href="/css/prism.css">
+<script src="/js/prism.js"></script>
 
   
 
@@ -76,7 +73,7 @@
 
     <nav class="nav">
       <ul class="nav-list">
-        <li class="nav-item"><span class="nav-item-separator">//</span><a href="https://canderskov.github.io">Home</a></li>
+        <li class="nav-item"><span class="nav-item-separator">//</span><a href="https://canderskov.github.io/">Home</a></li>
         
           <li class="nav-item"><span class="nav-item-separator">//</span><a href="/about/aboutme/">About</a></li>
         
@@ -107,7 +104,13 @@
 <ul>
 <li>
 <ul>
-<li><a href="#why">Why</a></li>
+<li><a href="#why">Why</a>
+<ul>
+<li>
+<ul>
+<li><a href="#a-snippet-of-the-json-the-following-bash-script-is-scraping-for-context">A snippet of the json the following bash script is scraping for context:</a></li>
+</ul></li>
+</ul></li>
 </ul></li>
 </ul></li>
 </ul>
@@ -135,13 +138,13 @@
 			
 				<div class="post-categories">
 				
-					<a class="post-category post-category-development" href="https://canderskov.github.io/categories/development">Development</a>
+					<a class="post-category post-category-development" href="https://canderskov.github.io//categories/development">Development</a>
 				
-					<a class="post-category post-category-bash" href="https://canderskov.github.io/categories/bash">bash</a>
+					<a class="post-category post-category-bash" href="https://canderskov.github.io//categories/bash">bash</a>
 				
-					<a class="post-category post-category-json" href="https://canderskov.github.io/categories/json">json</a>
+					<a class="post-category post-category-json" href="https://canderskov.github.io//categories/json">json</a>
 				
-					<a class="post-category post-category-inlfuxdb" href="https://canderskov.github.io/categories/inlfuxdb">inlfuxdb</a>
+					<a class="post-category post-category-inlfuxdb" href="https://canderskov.github.io//categories/inlfuxdb">inlfuxdb</a>
 				
 				</div>
 			
@@ -155,12 +158,46 @@
 <h3 id="why">Why</h3>
 
 <blockquote>
-<p><a href="https://github.com/influxdata/telegraf">Telegraf</a> supports reading json and writing it to influxdb, however as of writing this, it only support grabbing numeric values, I need to grab text as well.</p>
-
-<p>Im sure there are smarter easier ways of doing this, and id love to hear about em, for now, this is what i was able to come up with</p>
+<p><a href="https://github.com/influxdata/telegraf">Telegraf</a> supports reading json and writing it to influxdb, however as of writing this, it only support grabbing numeric values, I need to grab text as well.
+Im sure there are smarter easier ways of doing this, and id love to hear about em, for now, this is what i was able to come up with</p>
 </blockquote>
 
-<pre><code class="language-bash">#!/bin/sh
+<h5 id="a-snippet-of-the-json-the-following-bash-script-is-scraping-for-context">A snippet of the json the following bash script is scraping for context:</h5>
+
+<pre><code class="language-json">
+{
+	ServerNames: [
+	{
+		Time: 1485883080000000000,
+		servername: &quot;ServerName01&quot;,
+		Count: 27
+	},
+	{
+		Time: 1485883080000000000,
+		servername: &quot;ServerName02&quot;,
+		Count: 1
+	}
+	]
+}
+
+</code></pre>
+
+<pre><code class="language-html">&lt;section id=&quot;main&quot;&gt;
+  &lt;div&gt;
+    &lt;h1 id=&quot;title&quot;&gt;{{ .Title }}&lt;/h1&gt;
+    {{ range .Data.Pages }}
+      {{ .Render &quot;summary&quot;}}
+    {{ end }}
+  &lt;/div&gt;
+&lt;/section&gt;
+</code></pre>
+
+<blockquote>
+<p>The bash script:</p>
+</blockquote>
+
+<pre><code class="language-bash">
+#!/bin/sh
 
 #JSON to influx line protocol reformatter, Since the built in json parser of telegraf have a bug handling arrays the simplets way to get arrays of datas into influx was to write this simple reformatter, from json to line.
 # By Christian Anderskov Petersen christian@anderskov.dk
@@ -205,13 +242,13 @@ echo $DATE - Wrote $i entries to $INFLUXHOST &gt;&gt; /var/log/influxcollectors/
 				<div class="tags-list">
 					<span class="dark-red">Tags</span><span class="decorative-marker">//</span>
 					
-	                <a class="post-tag post-tag-development" href="https://canderskov.github.io/tags/development">Development</a>,
+	                <a class="post-tag post-tag-development" href="https://canderskov.github.io//tags/development">Development</a>,
 	                
-	                <a class="post-tag post-tag-bash" href="https://canderskov.github.io/tags/bash">bash</a>,
+	                <a class="post-tag post-tag-bash" href="https://canderskov.github.io//tags/bash">bash</a>,
 	                
-	                <a class="post-tag post-tag-json" href="https://canderskov.github.io/tags/json">json</a>,
+	                <a class="post-tag post-tag-json" href="https://canderskov.github.io//tags/json">json</a>,
 	                
-	                <a class="post-tag post-tag-inlfuxdb" href="https://canderskov.github.io/tags/inlfuxdb">inlfuxdb</a>,
+	                <a class="post-tag post-tag-inlfuxdb" href="https://canderskov.github.io//tags/inlfuxdb">inlfuxdb</a>,
 	                
 				</div>
 			
@@ -220,6 +257,11 @@ echo $DATE - Wrote $i entries to $INFLUXHOST &gt;&gt; /var/log/influxcollectors/
 				<div class="paging">
 					<span class="paging-label">More Reading</span>
 					
+					<div class="paging-newer">
+						<span class="dark-red">Newer</span><span class="decorative-marker">//</span>
+						<a class="paging-link" href="/post/Running_Hugo_from_gitpages/">Running Hugo from github.io root</a>
+		            </div>
+		            
 
 					
 					<div class="paging-older">
