@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us">
+<head>
+  <title>
+    Running Hugo from github.io root // CAnderskov - Notes To Self..
+  </title>
+
+  <link href="http://gmpg.org/xfn/11" rel="profile">
+<meta http-equiv="content-type" content="text/html; charset=utf-8">
+
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+
+<meta name="description" content="">
+<meta name="keywords" content="">
+<meta name="author" content="">
+<meta name="generator" content="Hugo 0.18.1" />
+
+  <meta property="og:title" content="Running Hugo from github.io root" />
+<meta property="og:description" content="" />
+<meta property="og:type" content="website" />
+<meta property="og:locale" content="en_US" />
+<meta property="og:url" content="https://canderskov.github.io/post/Running_Hugo_from_gitpages/" />
+
+
+  
+  <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/pure/0.5.0/base-min.css">
+  <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/pure/0.5.0/pure-min.css">
+  
+  
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/pure/0.5.0/grids-responsive-min.css">
+  
+  
+
+  <link rel="stylesheet" href="https://canderskov.github.io//css/redlounge.css">
+  <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css" rel="stylesheet">
+  <link href='//fonts.googleapis.com/css?family=Raleway:400,200,100,700,300,500,600,800' rel='stylesheet' type='text/css'>
+  <link href='//fonts.googleapis.com/css?family=Libre+Baskerville:400,700,400italic' rel='stylesheet' type='text/css'>
+
+  
+  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/touch-icon-144-precomposed.png">
+  <link rel="shortcut icon" type="image/x-icon" href="/img/favicon.png">
+
+  
+  <link href="" rel="alternate" type="application/rss+xml" title="CAnderskov - Notes To Self.." />
+
+    
+
+<link rel="stylesheet" href="/css/prism.css">
+<script src="/js/prism.js"></script>
+
+  
+
+  
+
+  
+
+  
+</head>
+
+<body>
+	
+
+	<div id="layout" class="pure-g">
+    <div class="sidebar pure-u-1 pure-u-md-1-4">
+  <div class="header">
+    
+
+	
+
+    <h1 class="brand-title">Canderskov</h1>
+    <h2 class="brand-tagline">Notes to self</h2>
+
+    <nav class="nav">
+      <ul class="nav-list">
+        <li class="nav-item"><span class="nav-item-separator">//</span><a href="https://canderskov.github.io/">Home</a></li>
+        
+          <li class="nav-item"><span class="nav-item-separator">//</span><a href="/about/aboutme/">About</a></li>
+        
+          <li class="nav-item"><span class="nav-item-separator">//</span><a href="/post">Posts</a></li>
+        
+      </ul>
+    </nav>
+
+    
+
+  </div>
+</div>
+
+	
+	
+
+    <div class="content pure-u-1 pure-u-md-3-4">
+		<a name="top"></a>
+		
+
+		
+			
+		    <div id="toc" class="pure-u-1 pure-u-md-1-4">
+				<small class="toc-label">Contents</small>
+		   	 	<nav id="TableOfContents">
+<ul>
+<li>
+<ul>
+<li>
+<ul>
+<li><a href="#hugo-on-github-io-root">Hugo on Github.io root</a></li>
+</ul></li>
+</ul></li>
+</ul>
+</nav>
+		    </div>
+		    
+	    
+  		<section class="post">
+            <h1 class="post-title">
+              <a href="/post/Running_Hugo_from_gitpages/">Running Hugo from github.io root</a>
+            </h1>
+            <h3 class="post-subtitle">
+            	
+            </h3>
+            
+            	<span class="post-date">
+                	<span class="post-date-day"><sup>31</sup></span><span class="post-date-separator">/</span><span class="post-date-month">Jan</span> <span class="post-date-year">2017</span>
+            	</span>
+            	
+            
+            	
+            
+
+			
+			
+				<div class="post-categories">
+				
+					<a class="post-category post-category-development" href="https://canderskov.github.io//categories/development">Development</a>
+				
+					<a class="post-category post-category-github" href="https://canderskov.github.io//categories/github">github</a>
+				
+					<a class="post-category post-category-gitpages" href="https://canderskov.github.io//categories/gitpages">gitpages</a>
+				
+					<a class="post-category post-category-git-bash" href="https://canderskov.github.io//categories/git-bash">git bash</a>
+				
+					<a class="post-category post-category-hugo" href="https://canderskov.github.io//categories/hugo">hugo</a>
+				
+				</div>
+			
+
+			
+
+			
+
+            
+
+<h3 id="hugo-on-github-io-root">Hugo on Github.io root</h3>
+
+<blockquote>
+<p>when follwing the official guide.. atleast, not for me.. I wanted to run it from root of my github.io account, which meant setting up the deploy of hugo following this bit: <a href="https://gohugo.io/tutorials/github-pages-blog/#hosting-personal-organization-pages">https://gohugo.io/tutorials/github-pages-blog/#hosting-personal-organization-pages</a></p>
+
+<p>Granted, im still getting to know git, trying out the guide over multiple attempts only gave the exact same result over and over again, the deploy script would push the changes, but push em to the hugo repo, not the github.io repo, i managed to get it to work in one gitbash session, but after restarting that i was back to square one.
+This is when i started googling other results, i did find some, that did things similar to what i ended up doing was inspired heavily by the blog post here: <a href="http://charliegriefer.github.io/posts/2016/07/29/hugo-on-github-pages/">http://charliegriefer.github.io/posts/2016/07/29/hugo-on-github-pages/</a> but instead with a slight modification of me copying and overwriting files from my hugo repo instead of rm&rsquo;ing the folder posts folder, I was unsure how hugo handles files already being there when doing a build, and i figured that someday, down the line i might want to do things out of the posts directory.. which is why I modified the bash script to fit my needs. this was a quick and dirty kinda thing that i just wanted to get over with, All credit for the original script goes to @charliegriefer.github.io</p>
+</blockquote>
+
+<pre><code class="language-bash">#!/bin/bash
+
+echo -e &quot;\033[0;32mDeploying new page...\033[0m&quot;
+
+echo -e &quot;\033[0;32mGenerating new html...\033[0m&quot;
+hugo -t hugo-redlounge
+
+echo -e &quot;\033[0;32mMoving new html to repo folder...\033[0m&quot;
+mv public ../canderkov.github.io
+echo -e &quot;\033[0;32mChanging to blog directory...\033[0m&quot;
+cd ../canderskov.github.io
+
+echo -e &quot;\033[0;32mCommit and push the new build...\033[0m&quot;
+git add --a
+git commit -am &quot;Site Build (`date`)&quot;
+git push -f origin master
+
+echo -e &quot;\033[0;32mChange back to hugo soruce...\033[0m&quot;
+cd ../CAnderskov-hugo
+
+echo -e &quot;\033[0;32mDeploy complete.\033[0m&quot;
+
+</code></pre>
+
+	
+			
+
+			
+				<div class="tags-list">
+					<span class="dark-red">Tags</span><span class="decorative-marker">//</span>
+					
+	                <a class="post-tag post-tag-development" href="https://canderskov.github.io//tags/development">Development</a>,
+	                
+	                <a class="post-tag post-tag-github" href="https://canderskov.github.io//tags/github">github</a>,
+	                
+	                <a class="post-tag post-tag-gitpages" href="https://canderskov.github.io//tags/gitpages">gitpages</a>,
+	                
+	                <a class="post-tag post-tag-git-bash" href="https://canderskov.github.io//tags/git-bash">git bash</a>,
+	                
+	                <a class="post-tag post-tag-hugo" href="https://canderskov.github.io//tags/hugo">hugo</a>,
+	                
+				</div>
+			
+
+			
+				<div class="paging">
+					<span class="paging-label">More Reading</span>
+					
+
+					
+					<div class="paging-older">
+						<span class="dark-red">Older</span><span class="decorative-marker">//</span>
+			            <a class="paging-link" href="/post/BashJQToInfluxLineProtocol/">Bash/JQ To Influx Http API</a>
+		            </div>
+		            
+	            </div>
+            
+          </section>
+          
+          	
+          
+        
+      <div class="footer">
+	<hr class="thin" />
+	<div class="pure-menu pure-menu-horizontal pure-menu-open">
+		<ul class="footer-menu">
+		
+		</ul>
+	</div>
+
+	<p>&copy; 2017. All rights reserved.</p>
+</div>
+    </div>
+  </div>
+	
+
+	
+
+  
+</body>
+</html>
